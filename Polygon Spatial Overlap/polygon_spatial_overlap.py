@@ -19,7 +19,7 @@ from qgis import processing
 from PyQt5.QtCore import QVariant
 
 # TODO: standardized using postal code vs polygon
-class PolygonAreaSimilarity(QgsProcessingAlgorithm):
+class PolygonSpatialOverlap(QgsProcessingAlgorithm):
     # Parameters and outputs
     NEW_POLYGON_LAYER = "NEW_POLYGON_LAYER"
     OLD_POLYGON_LAYER = "OLD_POLYGON_LAYER"
@@ -31,14 +31,14 @@ class PolygonAreaSimilarity(QgsProcessingAlgorithm):
         """
         Returns the algorithm name, used for identifying the algorithm.
         """
-        return "polygonareasimilarity"
+        return "polygonspatialoverlap"
 
     def displayName(self) -> str:
         """
         Returns the translated algorithm name, which should be used for any
         user-visible display of the algorithm name.
         """
-        return "Polygon Area Similarity"
+        return "Polygon Spatial Overlap"
 
     def group(self) -> str:
         """
@@ -57,7 +57,7 @@ class PolygonAreaSimilarity(QgsProcessingAlgorithm):
         """
         Returns a localised short helper string for the algorithm.
         """
-        return "Compares area similarity between two polygon datasets using Jaccard index"
+        return "Compares spatial overlap (area similarity) between two polygon datasets using Jaccard index"
 
     def initAlgorithm(self, config: Optional[dict[str, Any]] = None):
         # Input polygon layer of new features to compare old features to
