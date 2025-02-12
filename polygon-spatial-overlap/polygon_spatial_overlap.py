@@ -131,7 +131,6 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
             new_polygon_layer.wkbType(),
             new_polygon_layer.sourceCrs()
         )
-        # If sink was not created, throw an exception
         if sink is None:
             raise QgsProcessingException(self.invalidSinkError(parameters, self.OUTPUT))
   
@@ -141,13 +140,9 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
         total = 100.0 / old_polygon_layer.featureCount()
         old_polygons_dict = {}
         for current, feature in enumerate(old_polygon_layer.getFeatures()):
-            # Stop the algorithm if cancel button has been clicked
             if feedback.isCanceled():
                 break
-            
             old_polygons_dict[feature[old_polygon_name_field]] = feature.geometry()
-            
-            # Update progress bar
             feedback.setProgress(int(current * total))
         
         # Calculate Jaccard index for new polygons
@@ -156,10 +151,8 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
         total_count = new_polygon_layer.featureCount()
         total = 100.0 / total_count
         for current, new_feature in enumerate(new_polygon_layer.getFeatures()):
-            # Stop the algorithm if cancel button has been clicked
             if feedback.isCanceled():
                 break
-            
             # Get matching old feature
             new_feature_name = new_feature.attribute(new_polygon_name_field)
             new_feature_geometry = new_feature.geometry()
@@ -171,14 +164,11 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
                 jaccard_index = intersection.area() / union.area() if union.area() > 0 else 0
             else:
                 jaccard_index = None
-            
             # Save results to sink
             output_feature = QgsFeature(output_layer_fields)
             output_feature.setGeometry(new_feature_geometry)
             output_feature.setAttributes([new_feature_name, jaccard_index])
             sink.addFeature(output_feature, QgsFeatureSink.FastInsert)
-            
-            # Update progress bar
             feedback.setProgress(int(current * total))
             
         # Return the results of the algorithm
