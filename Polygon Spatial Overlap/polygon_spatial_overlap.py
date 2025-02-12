@@ -18,7 +18,6 @@ from qgis.core import (
 from qgis import processing
 from PyQt5.QtCore import QVariant
 
-# TODO: standardized using postal code vs polygon
 class PolygonSpatialOverlap(QgsProcessingAlgorithm):
     # Parameters and outputs
     NEW_POLYGON_LAYER = "NEW_POLYGON_LAYER"
