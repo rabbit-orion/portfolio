@@ -171,7 +171,6 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
             sink.addFeature(output_feature, QgsFeatureSink.FastInsert)
             feedback.setProgress(int(current * total))
             
-        # Return the results of the algorithm
         return {self.OUTPUT_LAYER: dest_id}
 
     def createInstance(self):
