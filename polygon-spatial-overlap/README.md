@@ -3,7 +3,7 @@ In this project, I designed a PyQGIS-based processing script for QGIS that calcu
 
 This script matches polygon features based on if their names are identical, and outputs those features with their corresponding Jaccard index. One process optimization I implemented was to use [dictionaries](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) when iteratively accessing feature geometries, which reduces the associated operations from an $O(n)$ runtime to an $O(1)$ runtime. Access the code [here!](polygon_spatial_overlap.py)
 
-Below is a map of those results, which displays spatial changes in ZIP Code Tabulation Areas in the United States between 2010 and 2020.
+Below is a map of those results, which displays spatial changes in ZIP Code Tabulation Areas in the United States between 2010 and 2020. The graduated symbology is from [ColorBrewer](https://colorbrewer2.org/) and is colorblind safe and print friendly.
 
 ## Skills
 Geospatial Data Analysis, Cartography
