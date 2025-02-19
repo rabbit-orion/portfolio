@@ -111,7 +111,6 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
         old_polygon_layer = self.parameterAsSource(parameters, self.OLD_POLYGON_LAYER, context)
         new_polygon_name_field = self.parameterAsString(parameters, self.NEW_POLYGON_NAME_FIELD, context)
         old_polygon_name_field = self.parameterAsString(parameters, self.OLD_POLYGON_NAME_FIELD, context)
-        # If inputs were not found, throw an exception
         if new_polygon_layer is None:
             raise QgsProcessingException(self.invalidSourceError(parameters, self.NEW_POLYGON_LAYER))
         if old_polygon_layer is None:
@@ -122,7 +121,6 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
         output_layer_fields.append(QgsField("Name", QVariant.String))
         output_layer_fields.append(QgsField("Jaccard_index", QVariant.Double))
         
-        # Set up sink
         (sink, dest_id) = self.parameterAsSink(
             parameters,
             self.OUTPUT_LAYER,
