@@ -13,7 +13,7 @@ QGIS, Python, PyQGIS
 
 ## Datasets
 * [ZIP Code Tabulation Areas, U.S. Census Bureau (2010, 2020)](https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html)
-* [National Weather Service (2025)](https://www.weather.gov/gis/USStates)
+* [U.S. states, National Weather Service (2025)](https://www.weather.gov/gis/USStates)
 
 ## Map
 ![Map of Jaccard index comparing 2020 to 2010 ZIP Code Tabulation Areas in U.S. states.](polygonspatialoverlap_map.png)
