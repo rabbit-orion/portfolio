@@ -28,21 +28,19 @@ class PolygonSpatialOverlap(QgsProcessingAlgorithm):
 
     def name(self) -> str:
         """
-        Returns the algorithm name, used for identifying the algorithm.
+        Returns the algorithm name.
         """
         return "polygonspatialoverlap"
 
     def displayName(self) -> str:
         """
-        Returns the translated algorithm name, which should be used for any
-        user-visible display of the algorithm name.
+        Returns the translated algorithm name.
         """
         return "Polygon Spatial Overlap"
 
     def group(self) -> str:
         """
-        Returns the name of the group this algorithm belongs to. This string
-        should be localised.
+        Returns the name of the group this algorithm belongs to.
         """
         return "Custom Scripts"
 
