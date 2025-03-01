@@ -7,7 +7,7 @@ This script takes a dataset of CGFRs and matches them to a corresponding adminis
 Geospatial Data Analysis, Web Mapping
 
 ## Tools
-ArcGIS Online, Python, GeoPandas, PySAL
+ArcGIS Online, Python, Jupyter Notebook, GeoPandas, PySAL
 
 ## Datasets
 * [Cross-Gender Friending Ratios, Bailey et al. (2025)](https://data.humdata.org/dataset/cross-gender-ties)
