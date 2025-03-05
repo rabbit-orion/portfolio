@@ -9,7 +9,7 @@ Below is a map of those results, which displays spatial changes in ZIP Code Tabu
 Geospatial Data Analysis, Cartography
 
 ## Tools
-QGIS, Python, PyQGIS
+QGIS, Python (PyQGIS)
 
 ## Datasets
 * [ZIP Code Tabulation Areas, U.S. Census Bureau (2010, 2020)](https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html)
